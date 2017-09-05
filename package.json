@@ -1,0 +1,29 @@
+{
+  "name": "gulp-cht",
+  "version": "1.5.9",
+  "homepage": "https://www.npmjs.com/package/gulp-cht",
+  "description": "change Simplified Chinese to Traditional Chinese.",
+  "author": {
+    "name": "Thilina Fong",
+    "email": "15915940450@139.com",
+    "url": "http://fangxuecong.com/"
+  },
+  "main": "./fplugin/traditionalized.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/15915940450/gulp-cht"
+  },
+  "keywords": [
+    "cht",
+    "繁体中文",
+    "traditionalized",
+    "gulp",
+    "character",
+    "zh-HK"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

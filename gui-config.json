@@ -1,0 +1,19 @@
+{
+"configs" : [
+  {
+"server" : "47.91.245.246",
+"server_port" : 25892,
+"password" : "99",
+"method" : "aes-256-cfb",
+"remarks" : ""}
+
+],
+"strategy" : null,
+"index" : 0,
+"global" : false,
+"enabled" : true,
+"shareOverLan" : false,
+"isDefault" : false,
+"localPort" : 1080,
+"pacUrl" : null,
+"useOnlinePac" : false}

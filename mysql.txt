@@ -1,0 +1,40 @@
+CREATE DATABASE telephone_book CHARACTER SET utf8;
+
+CREATE TABLE mx4_pro(
+id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nm CHAR(16) NOT NULL,
+sex CHAR(1) NOT NULL,
+age TINYINT UNSIGNED NOT NULL,
+birthday BIGINT UNSIGNED,
+tel CHAR(15) UNIQUE,
+tm DATETIME DEFAULT NOW()
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+INSERT INTO mx4_pro(nm,sex,age,birthday,tel) VALUES('房学聪','男',30,523843200,'15915988888'); //SQL 使用单引号来环绕文本值（大部分数据库系统也接受双引号）。如果是数值，请不要使用引号。
+
+SELECT nm,tel FROM mx4_pro;
+
+UPDATE mx4_pro SET age=age+1 WHERE id=3;
+
+DELETE FROM mx4_pro WHERE id=4;
+
+ALTER TABLE mx4_pro ADD content TEXT;
+
+Group By:http://www.w3school.com.cn/sql/sql_groupby.asp
+========================================================
+时间戳的计算(格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数。)
+
+MySQL:
+select unix_timestamp();
+select unix_timestamp('1986-10-05 10:43:23');
+select from_unixtime(unix_timestamp());
+select from_unixtime(528864203,'%Y年%m月%d日 %H时%i分%s秒');
+
+php:
+echo time();
+echo strtotime('1986-10-05 10:43:23');
+echo date('Y-m-d H:i:s',528864203);
+
+JavaScript:
+timestamp = Math.round(new Date().getTime()/1000) = 秒;
+timestamp = Math.round(new Date('1986/10/05 10:43:23').getTime()/1000) = 秒;
