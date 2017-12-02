@@ -1,7 +1,7 @@
 " ------------------------------
 " Name: vimrc for windows
-" Author:vimer
-" Email: vimer@gmail.com
+" Author:Thilina
+" Email: 15915940450@139.com
 " ------------------------------
 
 " Startup {{{
@@ -55,7 +55,6 @@ let $LANG = 'en_US.UTF-8'
 
 " GUI {{{
 colorscheme desert
-" colorscheme luna
 
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -113,8 +112,6 @@ nmap <leader>e :e $MYVIMRC<cr>
 
 nmap <leader>tn :tabnew<cr>
 nmap <leader>tc :tabclose<cr>
-nmap <leader>th :tabp<cr>
-nmap <leader>tl :tabn<cr>
 
 " 移动分割窗口
 nmap <C-j> <C-W>j
@@ -140,9 +137,6 @@ inoremap <C-BS> <Esc>bdei
 nnoremap vv ^vg_
 " 转换当前行为大写
 inoremap <C-u> <esc>mzgUiw`za
-" 命令模式下的行首尾
-cnoremap <C-a> <home>
-cnoremap <C-e> <end>
 
 nnoremap <F2> :setlocal number!<cr>
 nnoremap <leader>w :set wrap!<cr>
@@ -202,9 +196,9 @@ Plugin 'scrooloose/nerdtree'
  let g:NERDTreeDirArrowExpandable = '+'
  let g:NERDTreeDirArrowCollapsible = '-'
  nmap <leader>n :NERDTreeToggle <cr>
- if exists('g:NERDTreeWinPos')
-     autocmd vimenter * NERDTree $HOME\frontend
- endif
+ "if exists('g:NERDTreeWinPos')
+     "autocmd vimenter * NERDTree $HOME\frontend
+ "endif
 " }}}
 " ----- Multiple-cursors ----- {{{
 Plugin 'terryma/vim-multiple-cursors'
@@ -226,6 +220,39 @@ Plugin 'mattn/emmet-vim'
 " ----- Fugitive ----- {{{
 Plugin 'tpope/vim-fugitive'
 " }}}
+" ----- vim-syntastic ----- {{{
+Plugin 'vim-syntastic/syntastic'
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
+  let g:syntastic_javascript_checkers = ['eslint']
+  let g:syntastic_javascript_eslint_args=['--cache']
+  "let g:syntastic_ruby_mri_args = "--my --args --here"
+  let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+" }}}
+" ----- html5.vim ----- {{{
+Plugin 'othree/html5.vim'
+  let g:html5_event_handler_attributes_complete = 0
+  let g:html5_rdfa_attributes_complete = 0
+  let g:html5_microdata_attributes_complete = 0
+  let g:html5_aria_attributes_complete = 0
+" }}}
+" ----- vim-javascript(remove) ----- {{{
+"Plugin 'pangloss/vim-javascript'
+  "let g:javascript_plugin_jsdoc = 1
+  "let g:javascript_plugin_ngdoc = 1
+  "let g:javascript_plugin_flow = 1
+  "augroup javascript_folding
+    "au!
+    "au FileType javascript setlocal foldmethod=syntax
+  "augroup END
+"" }}}
+
 
 filetype on
 call vundle#end()
