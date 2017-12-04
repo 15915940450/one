@@ -242,16 +242,6 @@ Plugin 'othree/html5.vim'
   let g:html5_microdata_attributes_complete = 0
   let g:html5_aria_attributes_complete = 0
 " }}}
-" ----- vim-javascript(remove) ----- {{{
-"Plugin 'pangloss/vim-javascript'
-  "let g:javascript_plugin_jsdoc = 1
-  "let g:javascript_plugin_ngdoc = 1
-  "let g:javascript_plugin_flow = 1
-  "augroup javascript_folding
-    "au!
-    "au FileType javascript setlocal foldmethod=syntax
-  "augroup END
-"" }}}
 
 
 filetype on
