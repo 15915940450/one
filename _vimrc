@@ -230,10 +230,13 @@ Plugin 'vim-syntastic/syntastic'
   let g:syntastic_auto_loc_list = 1
   let g:syntastic_check_on_open = 1
   let g:syntastic_check_on_wq = 0
+
+  "let g:syntastic_<filetype>_checkers = ['<checker-name>']
+
+  "HTMLHint.................|syntastic-html-htmlhint|
+  let g:syntastic_html_checkers = ['htmlhint']
+  "ESLint...................|syntastic-javascript-eslint|
   let g:syntastic_javascript_checkers = ['eslint']
-  let g:syntastic_javascript_eslint_args=['--cache']
-  "let g:syntastic_ruby_mri_args = "--my --args --here"
-  let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 " }}}
 " ----- html5.vim ----- {{{
 Plugin 'othree/html5.vim'
