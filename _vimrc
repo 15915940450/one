@@ -203,9 +203,6 @@ Plugin 'scrooloose/nerdtree'
 " ----- Multiple-cursors ----- {{{
 Plugin 'terryma/vim-multiple-cursors'
 " }}}
-" ----- Markdown ----- {{{
-Plugin 'plasticboy/vim-markdown'
-" }}}
 " ----- Ctrlp ----- {{{
 Plugin 'kien/ctrlp.vim'
  let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
@@ -238,13 +235,6 @@ Plugin 'vim-syntastic/syntastic'
   "ESLint...................|syntastic-javascript-eslint|
   let g:syntastic_javascript_checkers = ['eslint']
 " }}}
-" ----- html5.vim ----- {{{
-Plugin 'othree/html5.vim'
-  let g:html5_event_handler_attributes_complete = 0
-  let g:html5_rdfa_attributes_complete = 0
-  let g:html5_microdata_attributes_complete = 0
-  let g:html5_aria_attributes_complete = 0
-" }}}
 
 
 filetype on
@@ -266,3 +256,5 @@ function! RemoveTrailingWhitespace()
 endfunction
 autocmd BufWritePre * call RemoveTrailingWhitespace()
 " }}}
+
+"2017-12-06 周三 10:06 上午
