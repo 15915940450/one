@@ -235,7 +235,9 @@ Plugin 'vim-syntastic/syntastic'
   "ESLint...................|syntastic-javascript-eslint|
   let g:syntastic_javascript_checkers = ['eslint']
 " }}}
-
+" ----- vim-surround ----- {{{
+Plugin 'tpope/vim-surround'
+" }}}
 
 filetype on
 call vundle#end()
