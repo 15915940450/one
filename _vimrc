@@ -196,9 +196,10 @@ Plugin 'scrooloose/nerdtree'
  let g:NERDTreeDirArrowExpandable = '+'
  let g:NERDTreeDirArrowCollapsible = '-'
  nmap <leader>n :NERDTreeToggle <cr>
- "if exists('g:NERDTreeWinPos')
-     "autocmd vimenter * NERDTree $HOME\frontend
- "endif
+ if exists('g:NERDTreeWinPos')
+     autocmd vimenter * NERDTree C:\wamp64\www\CMS-FrontEnd
+     "autocmd vimenter * NERDTree $HOME\gvimnerdtree
+ endif
 " }}}
 " ----- Multiple-cursors ----- {{{
 Plugin 'terryma/vim-multiple-cursors'
@@ -238,6 +239,9 @@ Plugin 'vim-syntastic/syntastic'
 " ----- vim-surround ----- {{{
 Plugin 'tpope/vim-surround'
 " }}}
+" ----- vim-airline/vim-airline ----- {{{
+Plugin 'vim-airline/vim-airline'
+" }}}
 
 filetype on
 call vundle#end()
@@ -258,5 +262,3 @@ function! RemoveTrailingWhitespace()
 endfunction
 autocmd BufWritePre * call RemoveTrailingWhitespace()
 " }}}
-
-"2017-12-06 周三 10:06 上午

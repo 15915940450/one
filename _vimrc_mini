@@ -196,7 +196,7 @@ Plugin 'scrooloose/nerdtree'
  let g:NERDTreeDirArrowCollapsible = '-'
  nmap <leader>n :NERDTreeToggle <cr>
  "if exists('g:NERDTreeWinPos')
-     "autocmd vimenter * NERDTree $HOME\frontend
+     "autocmd vimenter * NERDTree $HOME\gvimnerdtree
  "endif
 " }}}
 " ----- Multiple-cursors ----- {{{
@@ -213,7 +213,9 @@ Plugin 'scrooloose/nerdcommenter'
 " ----- Emmet ----- {{{
 Plugin 'mattn/emmet-vim'
 " }}}
-
+" ----- vim-airline/vim-airline ----- {{{
+Plugin 'vim-airline/vim-airline'
+" }}}
 
 filetype on
 call vundle#end()
