@@ -140,7 +140,6 @@ exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 nmap <silent> <leader>x :!start explorer %:p:h<CR>
 nmap <silent> <leader>cmd :!start cmd /k cd %:p:h<cr>
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-let NERDTreeBookmarksFile = $VIM . '/NERDTreeBookmarks'
 nmap ,fp :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
 " }}}
 

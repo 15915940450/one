@@ -130,46 +130,37 @@ inoremap <M-k> <Up>
 inoremap <M-h> <left>
 inoremap <M-l> <Right>
 
-" IDE like delete
-inoremap <C-BS> <Esc>bdei
-
-nnoremap vv ^vg_
 " 转换当前行为大写
 inoremap <C-u> <esc>mzgUiw`za
 
+" 复制当前文件路径到剪贴板
+nmap ,fp :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
+
+" 打印当前时间
+nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+
+" 打开当前目录 windows
+nmap <silent> <leader>x :!start explorer %:p:h<CR>
+
+" 打开当前目录CMD
+nmap <silent> <leader>cmd :!start cmd /k cd %:p:h<cr>
+
+
+nnoremap vv ^vg_
 nnoremap <F2> :setlocal number!<cr>
 nnoremap <leader>w :set wrap!<cr>
-
 imap <C-v> "+gP
 vmap <C-c> "+y
-vnoremap <BS> d
 vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
 imap <C-V> "+gP
 map <S-Insert> "+gP
 cmap <C-V> <C-R>+
 cmap <S-Insert> <C-R>+
-
 exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
 exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 
-" 打开当前目录 windows
-nmap <silent> <leader>ex :!start explorer %:p:h<CR>
 
-" 打开当前目录CMD
-nmap <silent> <leader>cmd :!start cmd /k cd %:p:h<cr>
-" 打印当前时间
-nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-
-let NERDTreeBookmarksFile = $VIM . '/NERDTreeBookmarks'
-
-" 复制当前文件/路径到剪贴板
-nmap ,fn :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
-nmap ,fp :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
-
-"设置切换Buffer快捷键"
-nnoremap <C-left> :bn<CR>
-nnoremap <C-right> :bp<CR>
 
 " }}}
 
@@ -198,9 +189,6 @@ Plugin 'scrooloose/nerdtree'
  "if exists('g:NERDTreeWinPos')
      "autocmd vimenter * NERDTree $HOME\gvimnerdtree
  "endif
-" }}}
-" ----- Multiple-cursors ----- {{{
-Plugin 'terryma/vim-multiple-cursors'
 " }}}
 " ----- Ctrlp ----- {{{
 Plugin 'kien/ctrlp.vim'
