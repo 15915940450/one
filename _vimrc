@@ -1,5 +1,5 @@
 " ------------------------------
-" Name: vimrc for windows
+" Name: _vimrc
 " Author:Thilina
 " Email: 15915940450@139.com
 " ------------------------------
@@ -7,11 +7,13 @@
 " Startup {{{
 filetype indent plugin on
 
+" 啓動時窗口最大化
+autocmd GUIEnter * simalt ~x
+
 augroup vimrcEx
   au!
 
   autocmd FileType text setlocal textwidth=78
-  autocmd GUIEnter * simalt ~x
 
 augroup END
 
@@ -39,8 +41,10 @@ set autochdir
 set whichwrap=b,s,<,>,[,]
 set nobomb
 set backspace=indent,eol,start whichwrap+=<,>,[,]
+
 " Vim 的默认寄存器和系统剪贴板共享
 set clipboard+=unnamed
+
 " 设置 alt 键不映射到菜单栏
 set winaltkeys=no
 " }}}
@@ -61,21 +65,28 @@ source $VIMRUNTIME/menu.vim
 set cursorline
 set hlsearch
 set number
+
 " 窗口大小
 set lines=35 columns=135
+
 " 分割出来的窗口位于当前窗口下边/右边
 set splitbelow
 set splitright
+
 "不显示工具/菜单栏
 set guioptions-=T
 set guioptions-=m
 set guioptions-=L
 set guioptions-=r
 set guioptions-=b
+
 " 使用内置 tab 样式而不是 gui
 set guioptions-=e
+
 " set nolist
 set listchars=trail:·,extends:>,precedes:<
+
+" Inconsolata字體
 set guifont=Inconsolata:h12:cANSI
 
 set statusline=%f
@@ -84,13 +95,12 @@ set statusline+=\ %{fugitive#head()}
 set statusline+=%=
 set statusline+=%{''.(&fenc!=''?&fenc:&enc).''}
 set statusline+=/
-set statusline +=%{&ff}            "file format
-set statusline+=\ -\      " Separator
+set statusline +=%{&ff}
+set statusline+=\ -\
 set statusline+=%l/%L
 set statusline+=[%p%%]
-set statusline+=\ -\      " Separator
+set statusline+=\ -\
 set statusline +=%1*\ %y\ %*
-
 " }}}
 
 " Format {{{
@@ -111,18 +121,18 @@ nmap <leader>s :source $MYVIMRC<cr>
 nmap <leader>e :e $MYVIMRC<cr>
 nmap <leader>tn :tabnew<cr>
 nmap <leader>tc :tabclose<cr>
-nmap <C-j> <C-W>j
-nmap <C-k> <C-W>k
-nmap <C-h> <C-W>h
-nmap <C-l> <C-W>l
+" nmap <C-j> <C-W>j
+" nmap <C-k> <C-W>k
+nmap <M-n> <C-W>h
+nmap <M-m> <C-W>l
 nnoremap <M-j> :resize +5<cr>
 nnoremap <M-k> :resize -5<cr>
 nnoremap <M-h> :vertical resize -5<cr>
 nnoremap <M-l> :vertical resize +5<cr>
 inoremap <M-j> <Down>
 inoremap <M-k> <Up>
-inoremap <M-h> <left>
-inoremap <M-l> <Right>
+inoremap <M-n> <left>
+inoremap <M-m> <Right>
 nnoremap vv ^vg_
 inoremap <C-u> <esc>mzgUiw`za
 nnoremap <F2> :setlocal number!<cr>
@@ -152,7 +162,7 @@ call vundle#begin('$VIM/vimfiles/bundle')
 " ----- Vundle ----- {{{
 Plugin 'VundleVim/Vundle.vim'
 " }}}
-" ----- NerdTree ----- {{{
+" ----- nerdtree ----- {{{
 Plugin 'scrooloose/nerdtree'
 
  let NERDTreeIgnore=['.idea', '.vscode', 'node_modules', '*.pyc']
@@ -171,21 +181,21 @@ Plugin 'scrooloose/nerdtree'
      "autocmd vimenter * NERDTree $HOME\gvimnerdtree
  "endif
 " }}}
-" ----- Ctrlp ----- {{{
+" ----- ctrlp ----- {{{
 Plugin 'kien/ctrlp.vim'
  let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
  set wildignore+=*\\.git\\*,*\\tmp\\*,*.swp,*.zip,*.exe,*.pyc
 " }}}
-" ----- Nerdcommenter ----- {{{
+" ----- nerdcommenter ----- {{{
 Plugin 'scrooloose/nerdcommenter'
 " }}}
-" ----- Emmet ----- {{{
+" ----- emmet-vim ----- {{{
 Plugin 'mattn/emmet-vim'
 " }}}
-" ----- Fugitive ----- {{{
+" ----- vim-fugitive(expo) ----- {{{
 Plugin 'tpope/vim-fugitive'
 " }}}
-" ----- vim-syntastic ----- {{{
+" ----- syntastic(expo) ----- {{{
 Plugin 'vim-syntastic/syntastic'
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
@@ -203,13 +213,10 @@ Plugin 'vim-syntastic/syntastic'
   "ESLint...................|syntastic-javascript-eslint|
   let g:syntastic_javascript_checkers = ['eslint']
 " }}}
-" ----- vim-surround ----- {{{
+" ----- vim-surround(expo) ----- {{{
 Plugin 'tpope/vim-surround'
 " }}}
-" ----- vim-airline/vim-airline ----- {{{
-Plugin 'vim-airline/vim-airline'
-" }}}
-" ----- posva/vim-vue ----- {{{
+" ----- vim-vue ----- {{{
 Plugin 'posva/vim-vue'
 " }}}
 
@@ -219,8 +226,6 @@ call vundle#end()
 
 " Function {{{
 " Remove trailing whitespace when writing a buffer, but not for diff files.
-" From: Vigil
-" @see http://blog.bs2.to/post/EdwardLee/17961
 function! RemoveTrailingWhitespace()
     if &ft != "diff"
         let b:curcol = col(".")
