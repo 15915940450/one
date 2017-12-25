@@ -1,0 +1,11 @@
+### Ubuntu Kylin 16.04 LTS
+
+
+gsettings set com.canonical.Unity.Launcher launcher-position Left
+
+sudo apt install vim vim-gnome
+git
+node
+npm
+ |-htmlhint
+ |-eslint

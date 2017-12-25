@@ -1,6 +1,0 @@
-服務器：47.91.245.246
-端口號：25892
-加密方式：aes-256-cfb
-密碼：r99
-
-https://panel.tianxing.co/

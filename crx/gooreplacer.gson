@@ -1,0 +1,16 @@
+{
+  "createBy": "http://liujiacai.net/gooreplacer/",
+  "version": "3.7",
+  "createAt": "Sat Dec 23 2017 12:32:57 GMT+0800 (CST)",
+  "redirect-rules": [
+    {
+      "src": "ajax.googleapis.com/ajax/libs",
+      "kind": "wildcard",
+      "dst": "lib.baomitu.com",
+      "enable": true
+    }
+  ],
+  "cancel-rules": [],
+  "request-headers": [],
+  "response-headers": []
+}
