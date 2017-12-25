@@ -9,3 +9,4 @@ node
 npm
  |-htmlhint
  |-eslint
+ |-vue-cli
