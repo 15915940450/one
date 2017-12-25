@@ -1,8 +1,6 @@
 "===============
 "create by Thilina Fong H.C. (+86 15915940450)
 "
-"
-"modify basic.vim in .vim_runtime/vimrcs/ then remember to run: sh ~/.vim_runtime/install_basic_vimrc.sh
 "base on amix/vimrc
 "===============
 
