@@ -13,9 +13,6 @@ module.exports = {
     sourceType: 'module'
   },
   "extends": "eslint:recommended",
-  plugins: [
-    'html'
-  ],
   "rules": {
     "indent": ["error", 2],
     "semi": ["error", "always"],
