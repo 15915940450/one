@@ -1,4 +1,5 @@
 module.exports = {
+  "root":true,
   "env": {
     "browser": true,
     "jquery":true,
@@ -12,6 +13,9 @@ module.exports = {
     sourceType: 'module'
   },
   "extends": "eslint:recommended",
+  plugins: [
+    'html'
+  ],
   "rules": {
     "indent": ["error", 2],
     "semi": ["error", "always"],
