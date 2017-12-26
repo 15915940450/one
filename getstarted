@@ -7,6 +7,7 @@ sudo apt install vim vim-gnome
 git
 node
 npm
+ |-n
  |-htmlhint
  |-eslint
  |-vue-cli
