@@ -70,7 +70,6 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-autocmd BufRead,BufNewFile *.vue setlocal filetype=xml
 
 
 
@@ -101,6 +100,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/TEST/*,*.xlsx,*.jpg,
 Plugin 'scrooloose/nerdcommenter'
 "==<leader>+c then <space>
 let g:NERDCustomDelimiters = { 'php': { 'left': '<!--','right': '-->' } }
+let g:NERDCustomDelimiters = { 'vue': { 'left': '/**','right': '*/' } }
 
 Plugin 'mattn/emmet-vim'
 "==ctrl+y then ,
@@ -115,6 +115,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_ignore_files = ['\.vue$']
 
 "let g:syntastic_<filetype>_checkers = ['<checker-name>']
 "HTMLHint.................|syntastic-html-htmlhint|
@@ -128,6 +129,9 @@ Plugin 'vim-scripts/bufexplorer.zip'
 "==<leader>+b then v
 
 Plugin 'szw/vim-maximizer'
+
+Plugin 'posva/vim-vue'
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
 "==<F3>
 "===
 
