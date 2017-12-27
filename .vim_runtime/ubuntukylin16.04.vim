@@ -76,7 +76,7 @@ autocmd BufRead,BufNewFile *.vue setlocal filetype=xml
 
 
 
-"VANDLE===================================================================
+"VUNDLE===================================================================
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
