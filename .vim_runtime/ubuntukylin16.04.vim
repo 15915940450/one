@@ -70,7 +70,7 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-
+autocmd BufRead,BufNewFile *.vue setlocal filetype=xml
 
 
 
@@ -124,14 +124,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 Plugin 'tpope/vim-surround'
 
-Plugin 'posva/vim-vue'
-
 Plugin 'vim-scripts/bufexplorer.zip'
 "==<leader>+b then v
-
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'pangloss/vim-javascript'
-"Plugin 'othree/html5.vim'
 
 Plugin 'szw/vim-maximizer'
 "==<F3>
