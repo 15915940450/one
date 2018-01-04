@@ -99,8 +99,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/TEST/*,*.xlsx,*.jpg,
 
 Plugin 'scrooloose/nerdcommenter'
 "==<leader>+c then <space>
-let g:NERDCustomDelimiters = { 'php': { 'left': '<!--','right': '-->' } }
-let g:NERDCustomDelimiters = { 'vue': { 'left': '/**','right': '*/' } }
+let g:NERDCustomDelimiters = { 'php': { 'left': '<!--','right': '-->' },'vue': { 'left': '/**','right': '*/' } }
 
 Plugin 'mattn/emmet-vim'
 "==ctrl+y then ,
