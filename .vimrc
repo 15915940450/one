@@ -144,8 +144,7 @@ filetype plugin indent on    " required
 
 
 
-nnoremap <leader>e :e ~/.vim_runtime/ubuntukylin16.04.vim<cr>
-nnoremap <leader>sh :!sh ~/.vim_runtime/install_vimrc.sh<cr>
+nnoremap <leader>e :e ~/.vimrc<cr>
 
 "=====
 nnoremap <C-n> :NERDTreeToggle<CR>
