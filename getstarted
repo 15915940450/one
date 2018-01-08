@@ -11,3 +11,4 @@ npm
  |-htmlhint
  |-eslint
  |-vue-cli
+ |-gulp-cli
