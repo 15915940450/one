@@ -85,7 +85,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 "==ctrl+n
-let NERDTreeIgnore = ['\.pyc$', '__pycache__','.idea', '.vscode', 'node_modules','*.zip', '*.pyc','*.so','TEST','*.xlsx','*.jpg','*.png','*.gif']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__','.idea', '.vscode', 'node_modules','*.zip', '*.pyc','*.so','TEST','batterystation','batterystationlmt','ccbike']
 let NERDTreeMinimalUI = 0
 let NERDTreeBookmarksSort = 1
 let NERDTreeShowLineNumbers = 0
@@ -95,7 +95,7 @@ let g:NERDTreeWinPos = 'right'
 Plugin 'kien/ctrlp.vim'
 "==ctrl+p
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/TEST/*,*.xlsx,*.jpg,*.png,*.gif
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*.xlsx,*.jpg,*.png,*.gif,*.ico,*.eot,*.otf,*.ttf,*.woff,*.woff2,*/TEST/*,*/batterystation/*,*/batterystationlmt/*,*/ccbike/*
 
 Plugin 'scrooloose/nerdcommenter'
 "==<leader>+c then <space>
@@ -128,10 +128,13 @@ Plugin 'vim-scripts/bufexplorer.zip'
 "==<leader>+b then v
 
 Plugin 'szw/vim-maximizer'
+"==<F3>
+
+Plugin 'dkprice/vim-easygrep'
+"==<leader>+v then r
 
 Plugin 'posva/vim-vue'
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
-"==<F3>
 "===
 
 call vundle#end()            " required
@@ -164,3 +167,8 @@ nnoremap <C-o> :vertical resize +5<cr>
 nnoremap vv ^vg_
 
 inoremap <C-u> <esc>mzgUiw`za
+
+
+"=======================
+"gt
+":vsplit
