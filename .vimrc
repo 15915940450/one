@@ -81,15 +81,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 "===
+"1.Vundle,2.nerdtree,3.ctrlp,4.nerdcommenter,5.emmet,6.syntastic,7.bufexplorer,8.maximizer,9.easygrep,10.vue
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 "==ctrl+n
 let NERDTreeIgnore = ['\.pyc$', '__pycache__','.idea', '.vscode', 'node_modules','*.zip', '*.pyc','*.so','TEST','batterystation','batterystationlmt','ccbike']
 let NERDTreeMinimalUI = 0
+let NERDTreeShowBookmarks = 1
 let NERDTreeBookmarksSort = 1
 let NERDTreeShowLineNumbers = 0
-let NERDTreeShowBookmarks = 1
 let g:NERDTreeWinPos = 'right'
 
 Plugin 'kien/ctrlp.vim'
@@ -103,8 +104,6 @@ let g:NERDCustomDelimiters = { 'php': { 'left': '<!--','right': '-->' },'vue': {
 
 Plugin 'mattn/emmet-vim'
 "==ctrl+y then ,
-
-Plugin 'tpope/vim-fugitive'
 
 Plugin 'vim-syntastic/syntastic'
 set statusline+=%#warningmsg#
@@ -122,8 +121,6 @@ let g:syntastic_html_checkers = ['htmlhint']
 "ESLint...................|syntastic-javascript-eslint|
 let g:syntastic_javascript_checkers = ['eslint']
 
-Plugin 'tpope/vim-surround'
-
 Plugin 'vim-scripts/bufexplorer.zip'
 "==<leader>+b then v
 
@@ -131,6 +128,11 @@ Plugin 'szw/vim-maximizer'
 "==<F3>
 
 Plugin 'dkprice/vim-easygrep'
+let g:EasyGrepRecursive=1
+let g:EasyGrepIgnoreCase=1
+let g:EasyGrepHidden=1
+"==<leader>+v then o
+"==<leader>+v then v
 "==<leader>+v then r
 
 Plugin 'posva/vim-vue'
