@@ -61,14 +61,11 @@ set cmdheight=2
 set hid
 set wrap
 set laststatus=2
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+set statusline=\ \[%{''.(&fenc!=''?&fenc:&enc).''}\]\ %{HasPaste()}%F%m%r%h\ %w\ \ \ \ Line:\ %l\ \ Column:\ %c\ \ \ \ \ \ \ \ \ \ \ \ \ CWD:\ %r%{getcwd()}%h
 
 
 autocmd BufWritePre * call RemoveTrailingWhitespace()
-autocmd BufReadPost *
-  \ if line("'\"") > 1 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 
 
